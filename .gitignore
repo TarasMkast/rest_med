@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+.idea/
+about/__pycache__/
+config/__pycache__/
+contacts/__pycache__/
+context_processors/__pycache__/
+core/__pycache__/
+news/__pycache__/
+services/__pycache__/
