@@ -4,6 +4,8 @@ from .serializer import ServicesSerializer, ServicesItemsSerializer
 
 
 class ServicesView(viewsets.ModelViewSet):
+
+    # @TODO Fuck this shit
     queryset = Services.objects.all()
     serializer_class = ServicesSerializer
 
