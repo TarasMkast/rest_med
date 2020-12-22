@@ -1,7 +1,7 @@
-from rest_framework import viewsets, permissions
+from rest_framework import (viewsets, permissions)
 
-from .models import Appointment, Social, MapMarker, Contacts
-from .serializer import AppointmentSerializer, SocialSerializer, ContactsSerializer, MapMarkerSerializer
+from contacts.models import (Appointment, Social, MapMarker, Contacts)
+from contacts.serializer import (AppointmentSerializer, SocialSerializer, ContactsSerializer, MapMarkerSerializer)
 
 
 # class AppointmentView(viewsets.ModelViewset):

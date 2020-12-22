@@ -1,8 +1,8 @@
-from .models import Clinic, Doctor, Gallery
+from about.models import (Clinic, Doctor, Gallery)
 
-from rest_framework import viewsets, permissions
+from rest_framework import (viewsets, permissions)
 
-from .serializer import ClinicSerializer, DoctorSerializer, GallerySerializer
+from about.serializer import (ClinicSerializer, DoctorSerializer, GallerySerializer)
 
 
 class ClinicView(viewsets.ModelViewSet):

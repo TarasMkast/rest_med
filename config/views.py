@@ -1,6 +1,6 @@
-from .models import LicenseField, Background
-from .serializer import LicenseFieldSerializer, BackgroundSerializer
-from rest_framework import viewsets, permissions
+from config.models import (LicenseField, Background)
+from config.serializer import (LicenseFieldSerializer, BackgroundSerializer)
+from rest_framework import (viewsets, permissions)
 
 
 class BackgroundView(viewsets.ModelViewSet):

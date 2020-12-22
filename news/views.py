@@ -1,6 +1,6 @@
-from rest_framework import viewsets, permissions
-from .models import News
-from .serializer import NewsSerializer
+from rest_framework import (viewsets, permissions)
+from news.models import News
+from news.serializer import NewsSerializer
 
 
 class NewsView(viewsets.ModelViewSet):
