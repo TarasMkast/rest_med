@@ -1,4 +1,7 @@
-from rest_framework import (viewsets, permissions)
+from rest_framework import (
+    viewsets,
+    permissions,
+)
 from news.models import News
 from news.serializer import NewsSerializer
 

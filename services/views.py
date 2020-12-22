@@ -1,6 +1,17 @@
-from services.models import (Services, ServiceItems)
-from rest_framework import (viewsets, permissions)
-from services.serializer import (ServicesSerializer, ServicesItemsSerializer)
+from rest_framework import (
+    viewsets,
+    permissions,
+)
+
+from services.models import (
+    Services,
+    ServiceItems,
+)
+
+from services.serializer import (
+    ServicesSerializer,
+    ServicesItemsSerializer,
+)
 
 
 class ServicesView(viewsets.ModelViewSet):
