@@ -2,7 +2,6 @@ from .models import Clinic, Doctor, Gallery
 
 from rest_framework import viewsets
 
-
 from .serializer import ClinicSerializer, DoctorSerializer, GallerySerializer
 
 
