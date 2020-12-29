@@ -22,7 +22,6 @@ class ContactsAdmin(admin.ModelAdmin):
     fields = ['address', 'email', 'first_phone', 'second_phone', 'schedule']
 
     def has_add_permission(self, request):
-        return False
-
-    def has_delete_permission(self, request, obj=None):
-        return False
+        if Contacts.objects.all():
+            return False
+        return True

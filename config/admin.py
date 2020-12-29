@@ -8,17 +8,15 @@ class BackgroundAdmin(admin.ModelAdmin):
     fields = ('background_photo', 'image', 'is_active')
 
     def has_add_permission(self, request):
-        return False
-
-    def has_delete_permission(self, request, obj=None):
-        return False
+        if Background.objects.all():
+            return False
+        return True
 
 @admin.register(LicenseField)
 class LicenseFieldAdmin(admin.ModelAdmin):
     fields = ('license_field',)
 
     def has_add_permission(self, request):
-        return False
-
-    def has_delete_permission(self, request, obj=None):
-        return False
+        if LicenseField.objects.all():
+            return False
+        return True
