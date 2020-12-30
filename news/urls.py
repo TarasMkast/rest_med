@@ -1,8 +1,8 @@
-from django.urls import path
 from rest_framework.routers import DefaultRouter
 
-from news.views import (NewsView,
-                        )
+from news.views import (
+    NewsView,
+)
 
 router = DefaultRouter()
 router.register('news', NewsView)
