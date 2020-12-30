@@ -1,7 +1,7 @@
-from django.urls import path
-from news.views import *
+from rest_framework.routers import DefaultRouter
+from news.views import NewsView
 
-urlpatterns = [
-    path('news/', NewsView.as_view({'get': 'list'})),
-    path('news/<int:pk>', NewsView.as_view({'get': 'retrieve'}))
-]
+
+router = DefaultRouter()
+router.register('news', NewsView)
+urlpatterns = router.urls

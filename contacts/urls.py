@@ -1,6 +1,9 @@
 from rest_framework.routers import DefaultRouter
-
-from .views import SocialView, MapMarkerView, ContactsView
+from contacts.views import (
+    SocialView,
+    MapMarkerView,
+    ContactsView,
+)
 
 router = DefaultRouter()
 

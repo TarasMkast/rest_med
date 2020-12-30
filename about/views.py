@@ -1,14 +1,15 @@
 from rest_framework import (
     viewsets,
     permissions,
-)
 
+)
+from rest_framework.generics import RetrieveAPIView
+from rest_framework.mixins import ListModelMixin
 from about.models import (
     Clinic,
     Doctor,
     Gallery,
 )
-
 from about.serializer import (
     ClinicSerializer,
     DoctorSerializer,
@@ -16,20 +17,21 @@ from about.serializer import (
 )
 
 
-class ClinicView(viewsets.ModelViewSet):
+class ClinicView(RetrieveAPIView, ListModelMixin, viewsets.GenericViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Clinic.objects.all()
     serializer_class = ClinicSerializer
 
 
-class DoctorView(viewsets.ModelViewSet):
+class DoctorView(RetrieveAPIView, ListModelMixin, viewsets.GenericViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Doctor.objects.all()
+    queryset = Doctor.objects.all(is_active=True)
     serializer_class = DoctorSerializer
 
 
-class GalleryView(viewsets.ModelViewSet):
+class GalleryView(RetrieveAPIView, ListModelMixin, viewsets.GenericViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Gallery.objects.all()
+    queryset = Gallery.objects.filter(is_active=True)
     serializer_class = GallerySerializer
+
 
