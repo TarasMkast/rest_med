@@ -20,3 +20,8 @@ class MapMarkerAdmin(admin.ModelAdmin):
 @admin.register(Contacts)
 class ContactsAdmin(admin.ModelAdmin):
     fields = ['address', 'email', 'first_phone', 'second_phone', 'schedule']
+
+    def has_add_permission(self, request):
+        if not self.model.objects.count():
+            return True
+        return False
