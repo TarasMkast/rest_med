@@ -25,7 +25,7 @@ class ClinicView(RetrieveAPIView, ListModelMixin, viewsets.GenericViewSet):
 
 class DoctorView(RetrieveAPIView, ListModelMixin, viewsets.GenericViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Doctor.objects.all(is_active=True)
+    queryset = Doctor.objects.all()
     serializer_class = DoctorSerializer
 
 

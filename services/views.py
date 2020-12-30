@@ -16,12 +16,12 @@ from services.serializer import (
 
 class ServicesView(RetrieveAPIView, ListModelMixin, viewsets.GenericViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Services.objects.all(is_active=True)
+    queryset = Services.objects.all()
     serializer_class = ServicesSerializer
 
 
 class ServicesItemsView(RetrieveAPIView, ListModelMixin, viewsets.GenericViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = ServiceItems.objects.all(is_active=True)
+    queryset = ServiceItems.objects.all()
     serializer_class = ServicesItemsSerializer
 
