@@ -4,12 +4,10 @@ from rest_framework import (
 )
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.mixins import ListModelMixin
-
 from services.models import (
     Services,
     ServiceItems,
 )
-
 from services.serializer import (
     ServicesSerializer,
     ServicesItemsSerializer,
@@ -18,12 +16,12 @@ from services.serializer import (
 
 class ServicesView(RetrieveAPIView, ListModelMixin, viewsets.GenericViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Services.objects.all()
+    queryset = Services.objects.all(is_active=True)
     serializer_class = ServicesSerializer
 
 
 class ServicesItemsView(RetrieveAPIView, ListModelMixin, viewsets.GenericViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = ServiceItems.objects.all()
+    queryset = ServiceItems.objects.all(is_active=True)
     serializer_class = ServicesItemsSerializer
 

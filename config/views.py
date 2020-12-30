@@ -3,8 +3,6 @@ from rest_framework import (
     permissions,
 )
 from rest_framework.generics import RetrieveAPIView
-from rest_framework.mixins import ListModelMixin
-
 from config.models import (
     LicenseField,
     Background,

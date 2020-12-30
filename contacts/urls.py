@@ -1,9 +1,8 @@
 from rest_framework.routers import DefaultRouter
-
 from contacts.views import (
     SocialView,
     MapMarkerView,
-    ContactsView
+    ContactsView,
 )
 
 router = DefaultRouter()

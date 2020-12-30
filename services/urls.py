@@ -1,5 +1,4 @@
 from rest_framework.routers import DefaultRouter
-
 from services.views import (
     ServicesView,
     ServicesItemsView,

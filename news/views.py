@@ -4,7 +4,6 @@ from rest_framework import (
 )
 from rest_framework.generics import RetrieveAPIView
 from rest_framework.mixins import ListModelMixin
-
 from news.models import News
 from news.serializer import NewsSerializer
 
