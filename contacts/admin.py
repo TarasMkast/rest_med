@@ -1,6 +1,6 @@
 from django.contrib import admin
-from contacts.models import *
-from core.utils import CustomModelAdmin
+from .models import *
+
 
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
@@ -18,6 +18,10 @@ class MapMarkerAdmin(admin.ModelAdmin):
 
 
 @admin.register(Contacts)
-class ContactsAdmin(CustomModelAdmin):
+class ContactsAdmin(admin.ModelAdmin):
     fields = ['address', 'email', 'first_phone', 'second_phone', 'schedule']
 
+    def has_add_permission(self, request):
+        if not self.model.objects.count():
+            return True
+        return False
