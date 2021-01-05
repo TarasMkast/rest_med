@@ -35,7 +35,6 @@ INSTALLED_APPS = [
     'news',
     'services',
     'phone_field',
-    'drf_yasg',
 ]
 
 MIDDLEWARE = [
