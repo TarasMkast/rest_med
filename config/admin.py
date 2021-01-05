@@ -3,6 +3,7 @@ from core.utils import CustomModelAdmin
 from config.models import *
 
 
+  
 @admin.register(Background)
 class BackgroundAdmin(CustomModelAdmin):
     readonly_fields = ('background_photo',)
