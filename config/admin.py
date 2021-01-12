@@ -5,7 +5,6 @@ from config.models import *
 
 @admin.register(Background)
 class BackgroundAdmin(CustomModelAdmin):
-    readonly_fields = ('image',)
     fields = ('image', 'is_active')
 
     def has_add_permission(self, request):
