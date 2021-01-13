@@ -3,9 +3,8 @@ from .models import *
 
 
 @admin.register(Background)
-class BackgroundAdmin(admin.ModelAdmin):
-    readonly_fields = ('background_photo',)
-    fields = ('background_photo', 'image', 'is_active')
+class BackgroundAdmin(CustomModelAdmin):
+    fields = ('image', 'is_active')
 
     def has_add_permission(self, request):
         if not self.model.objects.count():

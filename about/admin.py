@@ -9,8 +9,7 @@ class ClinicAdmin(admin.ModelAdmin):
 
 @admin.register(Doctor)
 class DoctorAdmin(admin.ModelAdmin):
-    readonly_fields = ('doctor_photo',)
-    fields = ('doctor_photo', 'image', 'is_active', 'order', 'surname', 'name', 'second_name', 'description')
+    fields = ('image', 'is_active', 'order', 'surname', 'name', 'second_name', 'description')
 
 
 @admin.register(Gallery)
