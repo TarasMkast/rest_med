@@ -1,6 +1,5 @@
 from django.contrib import admin
-from core.utils import CustomModelAdmin
-from config.models import *
+from .models import *
 
 
 @admin.register(Background)
@@ -13,7 +12,7 @@ class BackgroundAdmin(CustomModelAdmin):
         return False
 
 @admin.register(LicenseField)
-class LicenseFieldAdmin(CustomModelAdmin):
+class LicenseFieldAdmin(admin.ModelAdmin):
     fields = ('license_field',)
 
     def has_add_permission(self, request):

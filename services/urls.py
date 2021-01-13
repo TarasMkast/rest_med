@@ -1,6 +1,8 @@
-from django.urls import path
-from .views import ServicesView, ServicesItemsView
 from rest_framework.routers import DefaultRouter
+from services.views import (
+    ServicesView,
+    ServicesItemsView,
+)
 
 router = DefaultRouter()
 
